@@ -2,7 +2,7 @@ let questions = [];
 let currentIndex = 0;
 
 async function loadQuestions() {
-	const response = await fetch("questions.json");
+	const response = await fetch("questions.json", { cache: "no-store" });
 	questions = await response.json();
 	pickRandomQuestion();
 }
